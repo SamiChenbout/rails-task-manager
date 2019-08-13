@@ -1,0 +1,11 @@
+<ul>
+<% @tasks.each do |task| %>
+  <% if task.completed %>
+    <%= link_to "[X] #{task.title}", task_path(task)%>
+    <% else %>
+    <%= link_to "[] #{task.title}", task_path(task) %>
+  <% end %>
+<% end %>
+</ul>
+
+<%= link_to "+ Add a new task", new_path %>
